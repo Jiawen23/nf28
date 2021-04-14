@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<TabPane maxHeight="500.0" maxWidth="1000.0" minHeight="400.0" minWidth="800.0" prefHeight="450.0" prefWidth="850.0" tabMinWidth="40.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="td3.controller.TD3Controller">
+   <tabs>
+      <Tab closable="false" text="Edition">
+         <content>
+            <BorderPane fx:id="rootPane" maxHeight="500.0" maxWidth="1000.0" minHeight="400.0" minWidth="800.0" prefHeight="400.0" prefWidth="850.0">
+                  <left>
+                     <TreeView fx:id="tree" prefHeight="369.0" prefWidth="285.0" BorderPane.alignment="CENTER" />
+                  </left>
+                  <bottom>
+                     <HBox prefHeight="31.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                        <children>
+                           <Separator prefHeight="4.0" prefWidth="23.0" />
+                           <Button mnemonicParsing="false" onAction="#addElement" prefHeight="27.0" prefWidth="61.0" text="Ajouter" />
+                           <Separator prefHeight="4.0" prefWidth="23.0" />
+                           <Button mnemonicParsing="false" onAction="#removeElement" prefHeight="27.0" prefWidth="62.0" text="Retirer" />
+                        </children>
+                     </HBox>
+                  </bottom>
+                  <top>
+                     <MenuBar BorderPane.alignment="CENTER">
+                        <menus>
+                           <Menu mnemonicParsing="false" text="File">
+                              <items>
+                                 <MenuItem fx:id="open" mnemonicParsing="false" onAction="#openFile" text="Ouvrir" />
+                                 <MenuItem fx:id="save" mnemonicParsing="false" onAction="#saveFile" text="Sauver" />
+                                 <MenuItem fx:id="saveas" mnemonicParsing="false" onAction="#saveAs" text="Sauver sous" />
+                                 <MenuItem fx:id="close" mnemonicParsing="false" onAction="#close" text="Fermer" />
+                              </items>
+                           </Menu>
+                        </menus>
+                     </MenuBar>
+                  </top>
+               </BorderPane>
+        </content>
+        </Tab>
+            <Tab closable="false" onSelectionChanged="#reloadGraphics" text="Graphics">
+            <content>
+               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                     <GridPane>
+                        <columnConstraints>
+                           <ColumnConstraints hgrow="SOMETIMES" minWidth="400.0" prefWidth="400.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" minWidth="400.0" prefWidth="400.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                           <RowConstraints minHeight="400.0" prefHeight="400.0" vgrow="SOMETIMES" />
+                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <children>
+                           <PieChart fx:id="groupPieChart" minHeight="400.0" minWidth="400.0" />
+                           <BarChart fx:id="contactBarChart" minHeight="400.0" minWidth="400.0" GridPane.columnIndex="1">
+                              <xAxis>
+                                 <CategoryAxis side="BOTTOM" />
+                              </xAxis>
+                              <yAxis>
+                                 <NumberAxis side="LEFT" />
+                              </yAxis>
+                           </BarChart>
+                           <Button mnemonicParsing="false" onAction="#reloadGraphics" text="Recharger" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        </children>
+                     </GridPane>
+                  </children></AnchorPane>
+            </content>
+            </Tab>
+  </tabs>
+  </TabPane>
+
