@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="Fichier">
+                    <items>
+                        <MenuItem fx:id="open" mnemonicParsing="false" onAction="#open" text="0uvrir" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <GridPane BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="200.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="100.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                    <children>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: azure;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <center>
+                                <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                    <children>
+                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                            <children>
+                                                <Button fx:id="before" mnemonicParsing="false" onAction="#change2" text="&lt;" />
+                                            </children>
+                                        </VBox>
+                                        <ImageView fx:id="imageView" fitHeight="185.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                        </ImageView>
+                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                            <children>
+                                                <Button fx:id="after" mnemonicParsing="false" onAction="#change1" text="&gt;" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                            </center>
+                            <opaqueInsets>
+                                <Insets bottom="10.0" top="10.0" />
+                            </opaqueInsets>
+                            <padding>
+                                <Insets bottom="5.0" top="5.0" />
+                            </padding>
+                        </BorderPane>
+                    </children>
+                </AnchorPane>
+                <StackPane prefHeight="125.0" prefWidth="266.0" style="-fx-background-color: beige;">
+                    <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                            <children>
+                                <Label minHeight="20.0" minWidth="100.0" prefHeight="40.0" prefWidth="130.0" text="Affichage d'une image" />
+                                <Label alignment="CENTER" minHeight="20.0" minWidth="100.0" prefHeight="40.0" prefWidth="130.0" text="Dimension fixe " wrapText="true" />
+                                <Label fx:id="effect" alignment="CENTER" contentDisplay="CENTER" minHeight="20.0" minWidth="100.0" onMouseReleased="#sepiaEffect" prefHeight="40.0" prefWidth="130.0" text="  Effet Sepia" textAlignment="CENTER" wrapText="true" />
+                            </children>
+                        </VBox>
+                    </children>
+                </StackPane>
+            </children>
+        </GridPane>
+    </center>
+</BorderPane>
